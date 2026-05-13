@@ -1,0 +1,48 @@
+{% extends "articles/base.html" %}
+
+{% block content %}
+  <!-- 콘텐츠를 변수 값에 따라 변경 -->
+  <h1>Hello, {{ name }}!</h1>
+
+  <!-- 페이지 이동 링크 -->
+  {% comment %} <a href="/articles/">index</a> | {% endcomment %}
+  <a href="{% url "articles:index" %}">index</a> |
+  {% comment %} <a href="/dinner/">dinner</a> | {% endcomment %}
+  <a href="{% url "articles:dinner" %}">dinner</a> |
+  {% comment %} <a href="/search/">search</a> | {% endcomment %}
+  <a href="{% url "articles:search" %}">search</a> |
+  {% comment %} <a href="/throw/">throw</a> | {% endcomment %}
+  <a href="{% url "articles:throw" %}">throw</a> |
+  <!-- Variable Routing -->
+  {% comment %} <a href="/hello/ssafy/">greeting</a> | {% endcomment %}
+  <a href="{% url "articles:greeting" name %}">greeting</a> |
+  {% comment %} <a href="/articles/1/">Article 1</a> | {% endcomment %}
+  {% comment %} <a href="/articles/2/">Article 2</a> | {% endcomment %}
+  {% comment %} <a href="/articles/3/">Article 3</a> |  {% endcomment %}
+  {% for num in nums %}
+    <a href="{% url "articles:detail" num %}">{{ num }}번 글</a> |
+  {% endfor %}
+  <hr>
+
+  <!-- if, else, endif 태그 -->
+  {% if login %}
+    <h1>Hello, User!!!</h1>
+  {% else %}
+    <h1>Please, login.</h1>
+  {% endif %}
+
+  <!-- for 태그 -->
+  <ul>
+    {% for num in nums %}
+      <li>{{ num }}</li>
+    {% endfor %}
+  </ul>
+
+  <!-- 주석 -->
+  <h1>Hello, {# name #} (주석처리)</h1>
+  {% comment %} 
+    ... multiline 주석
+  {% endcomment %}
+
+
+{% endblock content %}
