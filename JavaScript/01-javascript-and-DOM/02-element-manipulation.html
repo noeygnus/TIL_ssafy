@@ -28,6 +28,7 @@
   <script>
     // 속성 요소 조작
     // 클래스 속성 조작
+    // const는 
     const h1Tag = document.querySelector('.heading')
     console.log(h1Tag.classList)
 
@@ -47,6 +48,9 @@
     aTag.setAttribute('href', 'https://www.naver.com/')
     console.log(aTag.getAttribute('href'))
 
+    const pTag = document.querySelector('p')
+    pTag.textContent = '내용 수정'
+    
     // aTag.removeAttribute('href')
     // console.log(aTag.getAttribute('href'))
   </script>
