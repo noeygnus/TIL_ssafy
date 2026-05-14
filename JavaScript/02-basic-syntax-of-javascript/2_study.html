@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const hi = '안녕';
+    console.log(hi)
+
+    for (let i=1; i<=5; i++) {
+      console.log(i)
+    }
+
+    const n1 = 0
+    const n2 = 0.123
+    const s1 = 'a'
+    const s2 = 'abc'
+    const b1 = true;
+    const b2 = false;
+
+    let str = 'abcde'
+    const t = str.includes('a')
+    console.log(t)
+
+    const t2 = str.split('')
+    console.log(t2)
+
+    const t3 = str.replace('c','z')
+    console.log(t3)
+    const t4 = str.replaceAll('a','A')
+    console.log(t4)
+
+    const myName = 'kevin'
+    const age = 42
+    console.log(myName + '는' + age +'살')
+    console.log(`${myName}는 ${age}살`)
+
+    console.log(`
+      이름 : kevin
+      나이 : 42
+      좋아하는 것 : 맥도날드
+    `)
+     
+    //배열 순회 for of 
+    const arr = [1,2,3]
+    for (const value of arr) {
+      console.log(value)
+    }
+    // 객체 순회 for in
+    const obj = {a:1, b:2, c:3}
+    for (const value in obj) {
+      console.log(value, obj[value])
+    }
+
+    const nums = [1,2,3,4]
+    console.log(nums.length)
+    console.log(nums)
+
+    nums.push(5)
+    console.log(nums)
+
+    const vect = [
+      [1,2,3,4],
+      [5,6,7,8],
+    ]
+    console.log(vect)
+
+    // 객체 
+    const myInfo = {
+      name : 'kevin',
+      age : 42,
+      isMarried : true,
+      family : ['아빠','엄마','시현이']
+    }
+
+    const user = ['kevin','bob','kevin']
+    console.log(...user)  
+    
+    const person = {
+      name : 'kevin',
+      age : 41,
+      sayage() {
+        console.log(`my age in ${this.age}`)
+      }
+    }
+    person.sayage()
+
+    //stringify 문자열로 변환하기
+    const users = {
+      name : 'tjddus',
+      name2 : 'bbq',
+      gender : 'female',
+      test : [1,2,3,4],
+    }
+
+    const obj_to_json = JSON.stringify(users)
+    console.log(obj_to_json)
+    console.log(typeof obj_to_json)
+
+    const json_to_obj = JSON.parse(obj_to_json)
+    console.log(json_to_obj)
+
+  </script>
+</body>
+</html>
